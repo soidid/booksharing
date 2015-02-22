@@ -31,7 +31,13 @@ function _create(item) {
   // server-side storage.
   // Using the current timestamp + random number in place of a real id.
   var id = (+new Date() + Math.floor(Math.random() * 999999)).toString(36);
-  _books[id]= assign({}, item, {id: id});
+  var timestamp = new Date().getTime();
+  //_books[id]= assign({}, item, {id: id});
+  var ref = new Firebase('https://booksharing.firebaseio.com/books/'+id);
+    ref.set(assign({}, item, {id: id, timestamp: timestamp}), function() {
+       console.log("New Book Added:"+item.title);
+
+    });
 }
 
 //利用 assign 做部分 update
@@ -42,7 +48,9 @@ function _update(id, updates) {
 }
 
 function _destroy(id) {
-  delete _books[id]
+  //delete _books[id]
+  var ref = new Firebase('https://booksharing.firebaseio.com/books/'+id);
+  ref.remove();
 }
 
 
@@ -95,7 +103,11 @@ AppDispatcher.register(function(action) {
       AppStore.emitChange();
       break;
     
-    
+    case AppConstants.BOOK_DESTROY:
+      _destroy(action.id)
+      //處理好之後廣播處去，讓 view 可以更新
+      AppStore.emitChange();
+      break;
 
     default:
       // no op

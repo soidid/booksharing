@@ -6,15 +6,10 @@ var SearchBar = require('../SearchBar/SearchBar.jsx');
 var Composer = require('../Composer/Composer.jsx');
 
 var AppStore = require('../../stores/AppStore');
-var AppActions = require('../../actions/AppActions');
+
+var Firebase = require('firebase');
 
 require('./App.css');
-
-
-function getBooks() {
-  
-  return AppStore.getAll();
-}
 
 var App = React.createClass({
   
@@ -25,17 +20,40 @@ var App = React.createClass({
     	showFocus: false,
     	focusItem: {},
     	searchText: "",
-      books: getBooks()
+      books: []
     }
+  },
+  
+  loadData () {
+    var ref = new Firebase('https://booksharing.firebaseio.com/books');
+    ref.on('value', function(snap) {
+      var objects = snap.val();
+      var items = [];
+      var sorted = [];
+
+      for(var key in objects){
+        items.push(objects[key]);
+      }
+
+      sorted = items.sort(function(a,b){
+        return b.timestamp - a.timestamp;
+      })
+
+      this.setState({
+        books: sorted
+      });
+
+    }.bind(this));
   },
 
   //把 view 註冊到 stores，當 store 有改變/emit change 的時候，用 _onChange 這個 callback 處理
   componentDidMount () {
-    AppStore.addChangeListener(this._onChange);
+    this.loadData();
+    //AppStore.addChangeListener(this._onChange);
   },
   
   componentWillUnmount () {
-    AppStore.removeChangeListener(this._onChange);
+    //AppStore.removeChangeListener(this._onChange);
   },
 
   _onClick (i, event) {
@@ -47,9 +65,7 @@ var App = React.createClass({
   },
 
   _onChange (){
-      this.setState({
-        books: getBooks()
-      });
+      this.loadData();
   },
 
   _onSearchTextChange (event){

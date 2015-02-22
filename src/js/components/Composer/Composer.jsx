@@ -45,7 +45,8 @@ var Composer = React.createClass({
       status: status
     }
     );
-    this._handleClear()
+    this._handleClick ();
+    this._handleClear();
   },
 
   render () {

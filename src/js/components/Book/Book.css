@@ -1,0 +1,90 @@
+/* 600px and below*/
+@media screen and (max-width: 600px){
+	.Book {
+    	width: 100%;
+    	display: inline-block;
+    	vertical-align: top;
+    	position: relative;
+    	background: white;
+    	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    	margin-bottom: 1px;
+    	text-align: center;
+        cursor: pointer;
+    }
+    .Book:hover {
+       box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+    }
+    .Book-img {
+    	width: 60px;
+    	float: left;
+    }
+    .Book-title {
+        padding: 10px;
+        line-height: 1.2;
+        text-align: left;
+        height: 50px;
+        overflow: hidden;
+    }
+    .Book-author {
+    	padding: 10px;
+    	line-height: 1.2;
+    	color: rgb(100,100,100);
+    	text-align: left;
+    	height: 50px;
+    	overflow: hidden;
+    }
+    .Book-wishList {
+    	background: rgba(0,0,0,0.7);
+    	position: absolute;
+    	bottom: 0px;
+    	width: 60px;
+    	color: white;
+    	text-align: center;
+    	padding: 5px;
+    	font-size: 12px;
+    }
+}
+/* 600px and up */
+@media screen and (min-width: 600px){
+	.Book {
+    	width: 200px;
+    	display: inline-block;
+    	vertical-align: top;
+    	position: relative;
+    	background: white;
+    	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    	margin: 4px;
+    	text-align: center;
+        cursor: pointer;
+    }
+    .Book:hover {
+       box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+    }
+    .Book-img {
+    	width:100%;
+    }
+    .Book-title {
+        padding: 10px;
+        line-height: 1.2;
+        text-align: left;
+        height: 50px;
+        overflow: hidden;
+    }
+    .Book-author {
+    	padding: 10px;
+    	line-height: 1.2;
+    	color: rgb(100,100,100);
+    	text-align: left;
+    	height: 50px;
+    	overflow: hidden;
+    }
+    .Book-wishList {
+    	background: rgba(0,0,0,0.7);
+    	position: absolute;
+    	top: 40%;
+    	width: 100%;
+    	color: white;
+    	text-align: center;
+    	padding: 10px;
+    }
+}

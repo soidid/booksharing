@@ -1,0 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700&subset=latin,devanagari);
+
+* {
+	box-sizing: border-box;
+}
+body {
+	background: rgb(236,236,236);
+	font-family:"Noto Sans","Noto Sans Devanagari","utsaah", arial , sans-serif ;
+}

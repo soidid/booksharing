@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Vollkorn);
+
+
+.App {
+	width: 100%;
+	position: relative;
+}
+.App-title {
+	margin-top: 15px;
+	font-family: 'Vollkorn', serif;
+	text-align: center;
+}
+@media screen and (min-width: 960px){
+    .App {
+	   width: 960px;
+	   margin: 0 auto;
+	   text-align: center;
+    }
+}

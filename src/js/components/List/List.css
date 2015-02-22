@@ -1,0 +1,43 @@
+.List-title {
+  
+
+}
+.List-content {
+
+}
+.List--defaultHide {
+  background: rgb(247,247,247);
+  position: absolute;
+  top:0px;
+  -moz-transition: .2s;
+  -ms-transition: .2s;
+  -webkit-transition: .2s;
+  transition: .2s;
+  transition-duration: .5s;
+  overflow: scroll;
+  height: 100%;
+  width: 0px;
+  right: -100%;
+}
+.List--defaultHide.is-show {
+  padding: 0px 8px 8px 8px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  right: 0px;
+  -webkit-transition: right .5s ease-in-out;
+  transition: right .5s ease-in-out;
+  z-index: 10;
+
+}
+.List-button {
+  background: none;
+  border: 1px solid gray;
+  margin: 5px 0px;
+}
+.List-button:hover {
+  color: white;
+  border: 1px solid #3F51B5;
+  background: #3F51B5;
+}

@@ -1,0 +1,169 @@
+/** @define Composer; use strict */
+
+:root {
+
+}
+.Composer {
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+  
+}
+.Composer-composeButton {
+  background-color: #FFA000;
+  color: white;
+  height: 56px;
+  width: 56px;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  box-sizing: border-box;
+  cursor: pointer;
+  z-index: 15;
+  text-align: center;
+  padding-top: 18px;
+
+}
+.Composer-composeButton:hover {
+   box-shadow: 0 6px 6px rgba(0,0,0,.14),0 6px 16px rgba(0,0,0,.28);
+}
+/* Wide Version */
+.Composer-composeForm {
+  box-shadow: 0 0 4px rgba(0,0,0,.28),0 4px 8px rgba(0,0,0,.28);
+  background: white;
+  width: 500px;
+  z-index: 99;
+  position: fixed;
+  right: 0px;
+  bottom: -100%;
+  height: 40vh;
+  -moz-transition: .2s;
+  -ms-transition: .2s;
+  -webkit-transition: .2s;
+  transition: .2s;
+  transition-duration: .5s;
+
+}
+.Composer-composeForm.is-show{
+  bottom: 0px;
+  height: 40vh;
+  -moz-transition: .2s;
+  -ms-transition: .2s;
+  -webkit-transition: .2s;
+  transition: .2s;
+  transition-duration: .5s;
+
+}
+.Composer-title {
+  background: #3F51B5;
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+.Composer-closeButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.Composer-listItem {
+  padding-left: 10px;
+  border-bottom: 1px solid rgb(220,220,220);
+  text-align: left;
+}
+.Composer-subtitle {
+  color: #424242;
+  font-weight: 700;
+  margin-right: 10px;
+  display: inline-block;
+  
+}
+.Composer-input {
+  width: 300px;
+  margin-top: 4px;
+  border: 0;
+  display: inline-block;
+  padding: 5px 10px;
+}
+.Composer-input:focus {
+  outline: none;
+}
+.Composer-action {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background: rgba(255,255,255,0.8);
+  padding: 10px;
+  box-sizing: border-box;
+}
+.Composer-actionButton {
+  border-radius: 2px;
+  box-shadow: 0 2px 2px rgba(0,0,0,.2);
+  color: #fff;
+  background: #3F51B5;
+  display: inline-block;
+  font-size: 13px;
+  padding: 7px 14px;
+  cursor: pointer;
+  min-width: 70px;
+  text-align: center;
+  transition: .2s;
+  position: absolute;
+  left: 10px;
+}
+.Composer-deleteButton {
+  border-radius: 2px;
+  border: 1px solid rgb(220,220,220);
+  box-shadow: 0 2px 2px rgba(0,0,0,.2);
+  display: inline-block;
+  font-size: 13px;
+  padding: 7px 14px;
+  cursor: pointer;
+  min-width: 70px;
+  text-align: center;
+  transition: .2s;
+  position: absolute;
+  left: 90px;
+  cursor: pointer;
+}
+/* Narrow Version */
+@media screen and (max-width: 600px){
+  .Composer-composeForm {
+    z-index: 400;
+    width: 100%;
+    height: 100%;
+    right: 0px;
+    overflow: hidden;
+    background: white;
+    position: fixed;
+  }
+  .Composer-composeForm.is-show{
+  	height: 100%;
+  }
+  .Composer-content {
+  	height: 100%;
+    width: 100%;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+  }
+  .Composer-content-input {
+    width: 100%;
+    border: 0;
+    padding-left: 0px;
+  }
+  .Composer-content-textarea {
+    width: 100%;
+    height: 300px;
+    overflow: scroll;
+    padding: 10px;
+    padding-left: 8px;
+    resize: none;
+    border-bottom: 1px solid red;
+
+  }
+  
+}
+

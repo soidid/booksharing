@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base build/",
+    "start": "webpack-dev-server --devtool eval --hot --progress --colors --content-base build/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "react": "^0.11.2",
-    "react-router": "^0.7.0"
+    "react-router": "^0.7.0",
+    "flux": "~2.0.1",
+    "object-assign": "~2.0.0"
   }
 }

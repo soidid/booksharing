@@ -5,38 +5,16 @@ var List = require('../List/List.jsx');
 var SearchBar = require('../SearchBar/SearchBar.jsx');
 var Composer = require('../Composer/Composer.jsx');
 
+var AppStore = require('../../stores/AppStore');
+var AppActions = require('../../actions/AppActions');
+
 require('./App.css');
 
-var data = [  
-   {  
-      "title":"觀察的力量：從烏干達到中國，如何為明天的客戶創造非凡的產品",
-      "author":"詹恩‧奇普切斯、西蒙‧史坦哈特",
-      "img":"http://media.taaze.tw/showLargeImage.html?sc=11100735672&width=189&height=273",
-      "taaze_link":"http://www.taaze.tw/sing.html?pid=11100735672",
-      "status":"in-shelf"
-   },
-   {  
-      "title":"審議民主",
-      "author":"埃爾斯特",
-      "img":"http://media.taaze.tw/showLargeImage.html?sc=11100248684&width=189&height=273",
-      "taaze_link":"http://www.taaze.tw/sing.html?pid=11100248684",
-      "status":"in-shelf"
-   },
-   {  
-      "title":"反脆弱：脆弱的反義詞不是堅強，是反脆弱",
-      "author":"納西姆‧尼可拉斯‧塔雷伯",
-      "img":"http://media.taaze.tw/showLargeImage.html?sc=11100659834&width=189&height=273",
-      "taaze_link":"http://www.taaze.tw/sing.html?pid=11100659834",
-      "status":"in-shelf"
-   },
-   {  
-      "title":"製造低收入戶",
-      "author":"洪伯勳",
-      "img":"http://media.taaze.tw/showLargeImage.html?sc=11100737813&width=189&height=273",
-      "taaze_link":"http://www.taaze.tw/sing.html?pid=11100737813",
-      "status":"wish-list"
-   }
-];
+
+function getBooks() {
+  
+  return AppStore.getAll();
+}
 
 var App = React.createClass({
   
@@ -47,7 +25,17 @@ var App = React.createClass({
     	showFocus: false,
     	focusItem: {},
     	searchText: "",
+      books: getBooks()
     }
+  },
+
+  //把 view 註冊到 stores，當 store 有改變/emit change 的時候，用 _onChange 這個 callback 處理
+  componentDidMount () {
+    AppStore.addChangeListener(this._onChange);
+  },
+  
+  componentWillUnmount () {
+    AppStore.removeChangeListener(this._onChange);
   },
 
   _onClick (i, event) {
@@ -58,11 +46,17 @@ var App = React.createClass({
     })
   },
 
-
-  _onChange (event){
+  _onChange (){
       this.setState({
-        searchText: event.target.value
+        books: getBooks()
       });
+  },
+
+  _onSearchTextChange (event){
+    this.setState({
+        searchText: event.target.value
+    });
+        
   },
 
  
@@ -72,7 +66,7 @@ var App = React.createClass({
     return (
       <div className="App">
         <div className="App-title">Share books with your community </div>
-        <SearchBar handleChange={this._onChange} 
+        <SearchBar handleChange={this._onSearchTextChange} 
                    value={this.state.searchText}/>
         
         <List type={focusListClass}
@@ -80,7 +74,7 @@ var App = React.createClass({
               handleClick={this._onClick} />
 
         <List type="basic" 
-              data={data} 
+              data={this.state.books} 
               handleClick={this._onClick}
               searchText={this.state.searchText}  />
 

@@ -36,7 +36,7 @@
   position: fixed;
   right: 0px;
   bottom: -100%;
-  height: 40vh;
+  height: 60vh;
   -moz-transition: .2s;
   -ms-transition: .2s;
   -webkit-transition: .2s;
@@ -46,7 +46,7 @@
 }
 .Composer-composeForm.is-show{
   bottom: 0px;
-  height: 40vh;
+  height: 60vh;
   -moz-transition: .2s;
   -ms-transition: .2s;
   -webkit-transition: .2s;
@@ -68,9 +68,10 @@
   cursor: pointer;
 }
 .Composer-listItem {
-  padding-left: 10px;
   border-bottom: 1px solid rgb(220,220,220);
   text-align: left;
+  padding: 5px 10px;
+ 
 }
 .Composer-subtitle {
   color: #424242;
@@ -84,7 +85,25 @@
   margin-top: 4px;
   border: 0;
   display: inline-block;
+  
+}
+.Composer-radioSet {
+  width: 120px;
+  position: relative;
+  display: inline-block;
   padding: 5px 10px;
+}
+.Composer-radio {
+  margin-left: 16px;
+  width: 120px;
+  cursor: pointer;
+
+}
+.Composer-radioText {
+  position: absolute;
+  left: 50px;
+  top: 5px;
+  pointer-events: none;
 }
 .Composer-input:focus {
   outline: none;

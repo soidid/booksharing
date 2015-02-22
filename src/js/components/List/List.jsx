@@ -10,9 +10,11 @@ var List = React.createClass({
   	
   	switch(this.props.type){
   		case 'basic':
-        
-
-  		var bookItems = this.props.data
+      var booksArray = [];
+      for(var key in this.props.data){
+        booksArray.push(this.props.data[key]);
+      }
+  		var bookItems = booksArray
   		
   		.filter((item) => {
         	return item.title.indexOf(this.props.searchText) != -1;

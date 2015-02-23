@@ -27,6 +27,7 @@ var App = React.createClass({
     	showFocus: false,
     	focusItem: {},
     	searchText: "",
+      searchStatus: "",
       books: getBooks(),
       selection: getSelection()
     }
@@ -86,13 +87,13 @@ var App = React.createClass({
         
   },
 
-  // _markBrought (){
-  //   AppActions.markSelectionBrought();
-  // },
-
-  // _markWish (){
-  //   AppActions.markSelectionWish();
-  // },
+  _onSearchStatusChange (event){
+    //console.log(event.target.value);
+    this.setState({
+        searchStatus: event.target.value
+    });
+        
+  },
 
   _resetSelection (){
     AppActions.resetSelection();
@@ -109,7 +110,8 @@ var App = React.createClass({
         <TopBar selection={this.state.selection}
                 handleReset={this._resetSelection}
                 hanldeSearchTextChange={this._onSearchTextChange}
-                searchText={this.state.searchText} />
+                searchText={this.state.searchText} 
+                handleSearchStatusChange={this._onSearchStatusChange}/>
 
         <List type={focusListClass}
               data={this.state.focusItem}
@@ -119,6 +121,7 @@ var App = React.createClass({
         <List type="basic" 
               data={this.state.books} 
               searchText={this.state.searchText}
+              searchStatus={this.state.searchStatus}
               handleClick={this._onClick}
               handleSelect={this._onSelect}
               selection={this.state.selection}  />

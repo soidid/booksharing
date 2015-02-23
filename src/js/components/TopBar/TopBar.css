@@ -3,9 +3,9 @@
     margin: 0 auto;
     margin-bottom: 10px;
     position: relative;
-    text-align: center;
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(220,220,220);
+    text-align: center;
 
 }
 .TopBar-actionPanel {
@@ -78,6 +78,7 @@
 @media screen and (min-width: 960px){
     .TopBar {
     	width: 820px;
+    	text-align: center;
     }
     .TopBar-action {
 	    display: inline-block;

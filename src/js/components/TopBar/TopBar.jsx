@@ -143,8 +143,14 @@ var TopBar = React.createClass({
     
     :
     <div className="TopBar">
-    <SearchBar handleChange={this.props.hanldeSearchTextChange} 
-               value={this.props.searchText}/>
+      <SearchBar handleChange={this.props.hanldeSearchTextChange} 
+                 value={this.props.searchText}/>
+      <select className="TopBar-select"
+              onChange={this.props.handleSearchStatusChange} >
+          <option value="">所有</option>
+          <option value="in-shelf">已購買</option>
+          <option value="wish-list">欲購清單</option>
+      </select>
     </div>;
   }
 });

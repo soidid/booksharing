@@ -23,7 +23,9 @@ var List = React.createClass({
   		var bookItems = booksArray
   		
   		.filter((item) => {
-        	return item.title.indexOf(this.props.searchText) != -1;
+        	return (item.title.indexOf(this.props.searchText) !== -1)
+                 &&
+                 (this.props.searchStatus==="" ||(this.props.searchStatus.indexOf(item.status)!== -1));
         })
 
         .map((item, index) => {

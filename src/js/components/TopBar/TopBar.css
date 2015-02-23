@@ -21,18 +21,22 @@
 }
 .TopBar-count {
 	font-family: Helvetica;
-	padding-top: 2px;
+	padding-top: 3px;
 }
 .TopBar-back {
+	font-family: Helvetica;
 	position: absolute;
 	left: 10px;
-	top: 8px;
+	top: 13px;
+	vertical-align: top;
 	cursor: pointer;
 }
 .TopBar-more {
+	font-family: Helvetica;
 	position: absolute;
     right: 10px;
-	top: 8px;
+	top: 13px;
+	vertical-align: top;
 	cursor: pointer;
 	
 }

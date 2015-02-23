@@ -6,6 +6,7 @@
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(220,220,220);
     text-align: center;
+    min-height: 140px;
 
 }
 .TopBar-actionPanel {
@@ -16,8 +17,8 @@
 	background: rgb(212,212,212);
 	position: relative;
 	padding: 10px 0px;
-	
 	margin-bottom: 4px;
+
 }
 .TopBar-count {
 	font-family: Helvetica;
@@ -83,6 +84,7 @@
     .TopBar {
     	width: 820px;
     	text-align: center;
+    	height: 100px;
     }
     .TopBar-action {
 	    display: inline-block;

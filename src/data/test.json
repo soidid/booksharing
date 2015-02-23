@@ -1,46 +1,126 @@
-{  
-   "i6gcntm7":{  
+{
+   "i6gcntm7":{
       "author":"埃爾斯特",
+      "current":"soidid",
       "id":"i6gcntm7",
       "img":"http://media.taaze.tw/showLargeImage.html?sc=11100248684&width=189&height=273",
+      "owner":"nitwit",
       "status":"in-shelf",
       "timestamp":1424603889204,
       "title":"審議民主",
-      "owner":"nitwit",
-      "current":"soidid",
       "wishedBy":""
    },
-   "i6gcpax5":{  
+   "i6gcpax5":{
       "author":"納西姆‧尼可拉斯‧塔雷伯",
+      "current":"soidid",
       "id":"i6gcpax5",
       "img":"http://media.taaze.tw/showLargeImage.html?sc=11100659834&width=189&height=273",
+      "owner":"soidid",
       "status":"in-shelf",
       "timestamp":1424603918893,
       "title":"反脆弱：脆弱的反義詞不是堅強，是反脆弱",
-      "owner":"soidid",
-      "current":"soidid",
       "wishedBy":""
    },
-   "i6gcu9gh":{  
+   "i6gcu9gh":{
       "author":"洪伯勳",
+      "current":"",
       "id":"i6gcu9gh",
       "img":"http://media.taaze.tw/showLargeImage.html?sc=11100737813&width=189&height=273",
+      "owner":"",
       "status":"wish-list",
       "timestamp":1424603936267,
       "title":"製造低收入戶",
-      "owner":"",
-      "current":"",
       "wishedBy":"pm5"
    },
-   "i6gcxw1i":{  
+   "i6gcxw1i":{
       "author":"詹恩‧奇普切斯、西蒙‧史坦哈特",
+      "current":"soidid",
       "id":"i6gcxw1i",
       "img":"http://media.taaze.tw/showLargeImage.html?sc=11100735672&width=189&height=273",
+      "owner":"soidid",
       "status":"in-shelf",
       "timestamp":1424603866686,
       "title":"觀察的力量：從烏干達到中國，如何為明天的客戶創造非凡的產品",
-      "owner":"soidid",
-      "current":"soidid",
       "wishedBy":""
+   },
+   "i6hqx3d0":{
+      "author":"陳俊志",
+      "current":"nitwit",
+      "id":"i6hqx3d0",
+      "img":"http://media.taaze.tw/showLargeImage.html?sc=11100412576&width=189&height=273",
+      "owner":"nitwit",
+      "status":"in-shelf",
+      "timestamp":1424688746299,
+      "title":"台北爸爸，紐約媽媽"
+   },
+   "i6hqxaaj":{
+      "author":"納西姆．尼可拉斯．塔雷伯",
+      "current":"soidid",
+      "id":"i6hqxaaj",
+      "img":"http://media.taaze.tw/showLargeImage.html?sc=11100569042&width=189&height=273",
+      "owner":"soidid",
+      "status":"in-shelf",
+      "timestamp":1424688647427,
+      "title":"黑天鵝效應"
+   },
+   "i6hr58sk":{
+      "author":"Joyce Huang",
+      "current":"peipei",
+      "id":"i6hr58sk",
+      "img":"http://media.taaze.tw/showLargeImage.html?sc=11100695101&width=189&height=273",
+      "owner":"peipei",
+      "status":"in-shelf",
+      "timestamp":1424688793806,
+      "title":"活出你的天賦才華：人類圖通道開啟獨一無二的人生"
+   },
+   "i6hr7mjo":{
+      "author":" 約翰‧史都瑞",
+      "current":"soidid",
+      "id":"i6hr7mjo",
+      "img":"http://image.anobii.com/anobi/image_book.php?item_id=01266dc8b44718af04&time=&type=4",
+      "owner":"nitwit",
+      "status":"in-shelf",
+      "timestamp":1424688593482,
+      "title":"文化消費與日常生活"
+   },
+   "i6hrcz1u":{
+      "author":"尼克．比爾頓",
+      "current":"nitwit",
+      "id":"i6hrcz1u",
+      "img":"http://pic.eslite.com/Upload/Product/201102/m/634332804581302500.jpg",
+      "owner":"nitwit",
+      "status":"in-shelf",
+      "timestamp":1424689517684,
+      "title":"一位數位移民的告白：Facebook, iPad, iPhone如何翻轉我們的世界"
+   },
+   "i6hrewzx":{
+      "author":"約翰．柏金斯",
+      "current":"nitwit",
+      "id":"i6hrewzx",
+      "img":"http://media.taaze.tw/showLargeImage.html?sc=11100175269&width=189&height=273",
+      "owner":"nitwit",
+      "status":"in-shelf",
+      "timestamp":1424689577625,
+      "title":"經濟殺手的告白"
+   },
+   "i6hrre82":{
+      "author":"傑佛瑞．史密斯",
+      "current":"nitwit",
+      "id":"i6hrre82",
+      "img":"http://media.taaze.tw/showLargeImage.html?sc=11100599912&width=189&height=273",
+      "owner":"nitwit",
+      "status":"in-shelf",
+      "timestamp":1424689427335,
+      "title":"欺騙的種子：揭發政府不想面對、企業不讓你知道的基因改造滅種黑幕"
+   },
+   "i6hrsbfk":{
+      "author":"艾德嘉．莫杭",
+      "current":"nitwit",
+      "id":"i6hrsbfk",
+      "img":"http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/055/09/0010550962.jpg&v=4fed95ac&w=348&h=348",
+      "owner":"nitwit",
+      "status":"in-shelf",
+      "timestamp":1424689338337,
+      "title":"大明星：慾望、迷戀與現代神話"
    }
 }

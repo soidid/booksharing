@@ -143,6 +143,9 @@ var TopBar = React.createClass({
     
     :
     <div className="TopBar">
+      <div className="TopBar-meta">
+          Share books within your community :)
+      </div>
       <SearchBar handleChange={this.props.hanldeSearchTextChange} 
                  value={this.props.searchText}/>
       <select className="TopBar-select"

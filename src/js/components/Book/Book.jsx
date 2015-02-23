@@ -25,6 +25,7 @@ var Book = React.createClass({
   		img,
   		status,
       owner,
+      current,
       wishedBy
   	} = this.props.data;
 
@@ -33,6 +34,11 @@ var Book = React.createClass({
     
     var personItem = (status === "wish-list") ? <Person name={wishedBy} /> : <Person name={owner} />;
     
+    var currentPersonItem = (owner && owner !== current && status === "in-shelf") ? 
+    <div className="Book-currentPersonSet">
+       <div className="Book-currentPersonArrow" /><div className="Book-arrow" />
+       <Person name={current} />
+    </div> : "";
 
     return (
       <div className="Book"
@@ -48,11 +54,17 @@ var Book = React.createClass({
         <img className="Book-img" 
              src={img} 
              onError={this._imageNotFound }/>
-        <div className="Book-title">{title}</div>
-        <div className="Book-author">{author}</div>
 
-        {personItem}
+        <div className="Book-main">
+            <div className="Book-title">{title}</div>
+            <div className="Book-author">{author}</div>
+            
+            <div className="Book-person">
+              {personItem}
+              {currentPersonItem}
+            </div>
 
+        </div>
       </div>
     );
   }

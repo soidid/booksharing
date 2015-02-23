@@ -31,6 +31,7 @@ var Composer = React.createClass({
     this.refs.img.getDOMNode().value = "";
     this.refs.status.getDOMNode().value = "";
     this.refs.person.getDOMNode().value = "";
+    this.refs.current.getDOMNode().value = "";
 
   },
 
@@ -45,7 +46,8 @@ var Composer = React.createClass({
           author: this.refs.author.getDOMNode().value,
           img: this.refs.img.getDOMNode().value,
           status: status,
-          owner: this.refs.person.getDOMNode().value
+          owner: this.refs.person.getDOMNode().value,
+          current: this.refs.current.getDOMNode().value
           
         });
 
@@ -109,8 +111,18 @@ var Composer = React.createClass({
                   <select className="TopBar-select"
                           ref="status">
                       <option value="in-shelf">已購買</option>
-                      <option value="wish-list">預購清單</option>
-                     
+                      <option value="wish-list">預購清單</option>  
+                  </select>
+              </div>
+              <div className="Composer-listItem">
+                  現在旅居：
+                  <select className="TopBar-select"
+                          ref="current">
+                      <option value=""></option>
+                      <option value="nitwit">nitwit</option>
+                      <option value="peipei">peipei</option>
+                      <option value="pm5">pm5</option>
+                      <option value="soidid">soidid</option>
                   </select>
               </div>
 

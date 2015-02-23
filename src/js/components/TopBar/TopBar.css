@@ -1,33 +1,49 @@
 
 .TopBar {
-    //border: 1px solid rgb(193,163,103);
     margin: 0 auto;
     margin-bottom: 10px;
     position: relative;
     text-align: center;
-    padding: 10px 20px;
-
+    padding-bottom: 10px;
     border-bottom: 1px solid rgb(220,220,220);
 
 }
+.TopBar-actionPanel {
+	border-radius: 4px;
+}
+.TopBar-meta {
+	width: 100%;
+	background: rgb(212,212,212);
+	position: relative;
+	padding: 10px 0px;
+	
+	margin-bottom: 4px;
+}
 .TopBar-count {
 	font-family: Helvetica;
-	padding-bottom: 5px;
+	padding-top: 2px;
 }
 .TopBar-back {
 	position: absolute;
 	left: 10px;
-	top: 10px;
+	top: 8px;
 	cursor: pointer;
 }
-.TopBar-back:hover {
+.TopBar-more {
+	position: absolute;
+    right: 10px;
+	top: 8px;
+	cursor: pointer;
+	
+}
+.TopBar-back:hover, .TopBar-more:hover {
 	text-decoration: underline;
 }
 .TopBar-select {
 	height: 30px;
 	line-height: 30px;
 	background: white;
-	margin: 2px;
+	margin: 10px 4px;
 	border-radius: 0px;
 }
 .TopBar-select:focus {
@@ -37,8 +53,7 @@
 	display: inline-block;
 	box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	margin: 5px 2px;
-	margin-top: 15px;
-	padding: 5px 5px;
+	padding: 5px 10px;
 	background: white;
 	cursor: pointer;
 }
@@ -46,6 +61,10 @@
 	background: #3F51B5;
 	color: rgb(247,247,247);
 }
+.TopBar-deleteAction {
+	display: none;
+}
+
 
 .TopBar-subtitle {
   color: #424242;
@@ -54,6 +73,8 @@
   display: inline-block;
   
 }
+
+
 @media screen and (min-width: 960px){
     .TopBar {
     	width: 820px;
@@ -65,5 +86,21 @@
 	    padding: 5px 10px;
 	    background: white;
 	    cursor: pointer;
+   }
+   .TopBar-deleteAction {
+   	    width: auto;
+   	    height: auto;
+	    display: inline-block;
+	    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	    margin: 5px 2px;
+	    padding: 5px 10px;
+	    background: white;
+	    cursor: pointer;
+	    position: absolute;
+	    right: 0px;
+   }
+   .TopBar-deleteAction:hover {
+	    background: #D32F2F;
+	    color: rgb(247,247,247);
    }
 }

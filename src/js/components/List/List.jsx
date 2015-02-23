@@ -32,7 +32,7 @@ var List = React.createClass({
             var boundSelect = this.props.handleSelect.bind(null, item);
             var selected = selection.indexOf(item.id)!==-1;
             //console.log(selection);
-  			    console.log(selected);
+  			    //console.log(selected);
 
         return (
            		<Book key={index} 

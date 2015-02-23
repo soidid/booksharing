@@ -59,7 +59,7 @@ var App = React.createClass({
   },
 
   _onSelect(item, event){
-    console.log(item);
+    //console.log(item);
     event.stopPropagation();
     
     var selection = Object.keys(this.state.selection);
@@ -86,13 +86,13 @@ var App = React.createClass({
         
   },
 
-  _markBrought (){
-    AppActions.markSelectionBrought();
-  },
+  // _markBrought (){
+  //   AppActions.markSelectionBrought();
+  // },
 
-  _markWish (){
-    AppActions.markSelectionWish();
-  },
+  // _markWish (){
+  //   AppActions.markSelectionWish();
+  // },
 
   _resetSelection (){
     AppActions.resetSelection();
@@ -107,8 +107,6 @@ var App = React.createClass({
       <div className="App">
 
         <TopBar selection={this.state.selection}
-                handleBrought={this._markBrought}
-                handleWish={this._markWish}
                 handleReset={this._resetSelection}
                 hanldeSearchTextChange={this._onSearchTextChange}
                 searchText={this.state.searchText} />

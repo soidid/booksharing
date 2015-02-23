@@ -17,6 +17,16 @@ var AppActions = {
     });
   },
 
+  update: function(item) {
+
+    //定義每個 action 要送出去的資料
+    AppDispatcher.dispatch({
+      //actionType 要和 TodoContants 定義的一致
+      actionType: AppConstants.BOOK_UPDATE,
+      item: item
+    });
+  },
+
   destroy: function(id) {
 
     //定義每個 action 要送出去的資料
@@ -29,12 +39,16 @@ var AppActions = {
     });
   },
 
+  destroySelection: function() {
+
+    AppDispatcher.dispatch({
+      actionType: AppConstants.BOOK_DESTROY_SELECTION
+    });
+  },
+
   addToSelection (item){
     AppDispatcher.dispatch({
-
-      //actionType 要和 TodoContants 定義的一致
       actionType: AppConstants.BOOK_ADD_TO_SELECTION,
-      //如果需要其他資料就寫在這裡
       item: item
     });
 
@@ -49,21 +63,6 @@ var AppActions = {
       id: id
     });
 
-  },
-
-  markSelectionBrought () {
-    AppDispatcher.dispatch({
-        actionType: AppConstants.BOOK_MARK_SELECTION_BROUGHT
-      
-    });
-
-  },
-
-  markSelectionWish () {
-    AppDispatcher.dispatch({
-        actionType: AppConstants.BOOK_MARK_SELECTION_WISH
-      
-    });
   },
 
   resetSelection () {

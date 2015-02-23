@@ -29,25 +29,40 @@ var Composer = React.createClass({
     this.refs.title.getDOMNode().value = "";
     this.refs.author.getDOMNode().value = "";
     this.refs.img.getDOMNode().value = "";
-    this.refs.inShelf.getDOMNode().checked = false;
-    this.refs.wishList.getDOMNode().checked = false;
+    this.refs.status.getDOMNode().value = "";
+    this.refs.person.getDOMNode().value = "";
 
-    
   },
 
   _submitBook () {
-    var status = this.refs.wishList.getDOMNode().checked ? "wish-list" : "in-shelf";
     
-    console.log("owner: "+this.refs.owner.getDOMNode().value);
+    var status = this.refs.status.getDOMNode().value;
 
-    AppActions.create(
-    {
-      title: this.refs.title.getDOMNode().value,
-      author: this.refs.author.getDOMNode().value,
-      img: this.refs.img.getDOMNode().value,
-      status: status
+    if(status==="in-shelf"){
+        AppActions.create(
+        {
+          title: this.refs.title.getDOMNode().value,
+          author: this.refs.author.getDOMNode().value,
+          img: this.refs.img.getDOMNode().value,
+          status: status,
+          owner: this.refs.person.getDOMNode().value
+          
+        });
+
+    }else{
+        AppActions.create(
+        {
+          title: this.refs.title.getDOMNode().value,
+          author: this.refs.author.getDOMNode().value,
+          img: this.refs.img.getDOMNode().value,
+          status: status,
+          wishedBy: this.refs.person.getDOMNode().value,
+         
+        });
+
     }
-    );
+    
+    
     this._handleClick ();
     this._handleClear();
   },
@@ -80,26 +95,25 @@ var Composer = React.createClass({
                   <div className="Composer-subtitle">封面圖片 URL </div>
                   <input className="Composer-input" ref="img"/>
               </div>
+              
               <div className="Composer-listItem">
-                  <div className="Composer-subtitle">狀態 </div>
-                  <div className="Composer-radioSet">
-                  <input type="radio" name="status" value="in-shelf" className="Composer-radio" ref="inShelf" /> 
-                     <div className="Composer-radioText">已購買</div>
-                  </div>
-                  <div className="Composer-radioSet">
-                  <input type="radio" name="status" value="wish-list" className="Composer-radio" ref="wishList" />
-                     <div className="Composer-radioText">欲購清單</div>
-                  </div>
-              </div>
-              <div className="Composer-listItem">
-                  <div className="Composer-subtitle">購買人 </div>
-                  <select ref="owner">
-                     <option value="nitwit">nitwit</option>
-                     <option value="pm5">pm5</option>
-                     <option value="soidid">soidid</option>
+                  <div className="Composer-subtitle">狀態</div>
+                  <select className="TopBar-select"
+                          ref="person">
+                      <option value="nitwit">nitwit</option>
+                      <option value="peipei">peipei</option>
+                      <option value="pm5">pm5</option>
+                      <option value="soidid">soidid</option>
                   </select>
-                  
+
+                  <select className="TopBar-select"
+                          ref="status">
+                      <option value="in-shelf">已購買</option>
+                      <option value="wish-list">預購清單</option>
+                     
+                  </select>
               </div>
+
               <div className="Composer-action">
                   <div className="Composer-actionButton"
                        onClick={this._submitBook}>

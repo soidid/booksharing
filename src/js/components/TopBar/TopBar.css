@@ -10,6 +10,10 @@
     border-bottom: 1px solid rgb(220,220,220);
 
 }
+.TopBar-count {
+	font-family: Helvetica;
+	padding-bottom: 5px;
+}
 .TopBar-back {
 	position: absolute;
 	left: 10px;
@@ -19,18 +23,36 @@
 .TopBar-back:hover {
 	text-decoration: underline;
 }
+.TopBar-select {
+	height: 30px;
+	line-height: 30px;
+	background: white;
+	margin: 2px;
+	border-radius: 0px;
+}
+.TopBar-select:focus {
+	outline: none;
+}
 .TopBar-action {
 	display: inline-block;
 	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	margin: 5px 1px;
+	margin: 5px 2px;
 	margin-top: 15px;
-	padding: 5px 10px;
+	padding: 5px 5px;
 	background: white;
 	cursor: pointer;
 }
 .TopBar-action:hover {
 	background: #3F51B5;
 	color: rgb(247,247,247);
+}
+
+.TopBar-subtitle {
+  color: #424242;
+  font-weight: 700;
+  margin-right: 10px;
+  display: inline-block;
+  
 }
 @media screen and (min-width: 960px){
     .TopBar {

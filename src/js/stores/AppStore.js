@@ -55,6 +55,16 @@ function _destroy(id) {
   ref.remove();
 }
 
+function _destroySelection(){
+  for(var id in _selection){
+    var ref = new Firebase('https://booksharing.firebaseio.com/books/'+id);
+    ref.remove();
+    delete _selection[id];
+    
+  }
+
+}
+
 function _addToSelection(item) {
   _selection[item.id] = item;
   
@@ -82,6 +92,17 @@ function _markSelectioinWish(){
     delete _selection[id];
     
   }
+
+}
+function _update(item){
+  for(var id in _selection){
+    var ref = new Firebase('https://booksharing.firebaseio.com/books/'+id);
+    ref.update(item);
+
+    delete _selection[id];
+    
+  }
+
 
 }
 
@@ -173,10 +194,19 @@ AppDispatcher.register(function(action) {
       //處理好之後廣播處去，讓 view 可以更新
       AppStore.emitChange();
       break;
+
+    case AppConstants.BOOK_UPDATE:
+      _update(action.item)
+      AppStore.emitChange();
+      break;
     
     case AppConstants.BOOK_DESTROY:
       _destroy(action.id)
-      //處理好之後廣播處去，讓 view 可以更新
+      AppStore.emitChange();
+      break;
+
+     case AppConstants.BOOK_DESTROY_SELECTION:
+      _destroySelection()
       AppStore.emitChange();
       break;
 
@@ -187,16 +217,6 @@ AppDispatcher.register(function(action) {
 
     case AppConstants.BOOK_REMOVE_FROM_SELECTION:
       _removeFromSelection(action.id);
-      AppStore.emitChange();
-      break;
-
-    case AppConstants.BOOK_MARK_SELECTION_BROUGHT:
-      _markSelectioinBrought();
-      AppStore.emitChange();
-      break;
-
-    case AppConstants.BOOK_MARK_SELECTION_WISH:
-      _markSelectioinWish();
       AppStore.emitChange();
       break;
 

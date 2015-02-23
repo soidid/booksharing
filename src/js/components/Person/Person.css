@@ -1,0 +1,25 @@
+.Person {
+
+}
+.Person-img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 4px solid white;
+	
+}
+@media screen and (min-width: 600px){
+	.Person {
+    	position: absolute;
+    	right: 5px;
+    	top: 5px;
+    
+    }
+    .Person-img {
+    	width: 50px;
+    	height: 50px;
+    	border-radius: 50%;
+    	border: 4px solid white;
+    	
+    }
+}

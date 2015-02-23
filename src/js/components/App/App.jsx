@@ -78,15 +78,16 @@ var App = React.createClass({
       this.setState({
         selection: getSelection()
       });
-      console.log("on change");
-      console.log(this.state.selection);
+      //console.log("on change");
+      //console.log(this.state.selection);
   },
 
   _onSelect(item, event){
     console.log(item);
     event.stopPropagation();
     
-    if(event.target.checked){
+    var selection = Object.keys(this.state.selection);
+    if(selection.indexOf(item.id)===-1){
       AppActions.addToSelection(item);
     
     }else{
@@ -98,7 +99,7 @@ var App = React.createClass({
         selection: getSelection()
     });
 
-    console.log(this.state.selection);
+    //console.log(this.state.selection);
 
   },
 

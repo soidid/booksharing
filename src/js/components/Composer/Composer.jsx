@@ -37,6 +37,9 @@ var Composer = React.createClass({
 
   _submitBook () {
     var status = this.refs.wishList.getDOMNode().checked ? "wish-list" : "in-shelf";
+    
+    console.log("owner: "+this.refs.owner.getDOMNode().value);
+
     AppActions.create(
     {
       title: this.refs.title.getDOMNode().value,
@@ -87,6 +90,15 @@ var Composer = React.createClass({
                   <input type="radio" name="status" value="wish-list" className="Composer-radio" ref="wishList" />
                      <div className="Composer-radioText">欲購清單</div>
                   </div>
+              </div>
+              <div className="Composer-listItem">
+                  <div className="Composer-subtitle">購買人 </div>
+                  <select ref="owner">
+                     <option value="nitwit">nitwit</option>
+                     <option value="pm5">pm5</option>
+                     <option value="soidid">soidid</option>
+                  </select>
+                  
               </div>
               <div className="Composer-action">
                   <div className="Composer-actionButton"

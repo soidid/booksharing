@@ -4,6 +4,8 @@
 .App {
 	width: 100%;
 	position: relative;
+	margin-top: 10px;
+	
 }
 .App-title {
 	margin-top: 15px;

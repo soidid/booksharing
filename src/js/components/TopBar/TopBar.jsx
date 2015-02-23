@@ -21,10 +21,9 @@ var TopBar = React.createClass({
       <div>
           {count} {terms} selected
           <div className="TopBar-back"
-               onClick={this.props.handleReset}> ←Back</div>
+               onClick={this.props.handleReset}>X 取消</div>
       </div>
     
-      <div className="TopBar-action">刪除</div>
       <div className="TopBar-action"
            onClick={this.props.handleBrought}>標示為「已購買」</div>
       <div className="TopBar-action"
@@ -32,8 +31,10 @@ var TopBar = React.createClass({
     </div>
     
     :
+    <div className="TopBar">
     <SearchBar handleChange={this.props.hanldeSearchTextChange} 
-               value={this.props.searchText}/>;
+               value={this.props.searchText}/>
+    </div>;
   }
 });
 

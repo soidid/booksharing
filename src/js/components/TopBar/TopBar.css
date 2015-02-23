@@ -1,24 +1,29 @@
 
 .TopBar {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 1px solid rgb(193,163,103);
+    //border: 1px solid rgb(193,163,103);
     margin: 0 auto;
+    margin-bottom: 10px;
     position: relative;
-    background: white;
     text-align: center;
+    padding: 10px 20px;
+
+    border-bottom: 1px solid rgb(220,220,220);
 
 }
 .TopBar-back {
 	position: absolute;
 	left: 10px;
-	top: 5px;
+	top: 10px;
 	cursor: pointer;
+}
+.TopBar-back:hover {
+	text-decoration: underline;
 }
 .TopBar-action {
 	display: inline-block;
 	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	margin: 1px;
+	margin: 5px 1px;
+	margin-top: 15px;
 	padding: 5px 10px;
 	background: white;
 	cursor: pointer;
@@ -31,4 +36,12 @@
     .TopBar {
     	width: 820px;
     }
+    .TopBar-action {
+	    display: inline-block;
+	    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	    margin: 1px;
+	    padding: 5px 10px;
+	    background: white;
+	    cursor: pointer;
+   }
 }

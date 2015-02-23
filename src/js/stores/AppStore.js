@@ -14,6 +14,8 @@ var assign = require('object-assign');
 // store 改變之後廣播出去的內容
 var CHANGE_EVENT = 'change';
 
+var Firebase = require('firebase');
+
 
 // Store 分成三個大部分：private, public, register self
 
@@ -22,7 +24,6 @@ var CHANGE_EVENT = 'change';
 // Private vars & method
 
 // 定義 store 需要的變數和 method，外界看不到
-// 現在只有新增 & 刪除
 
 var _books = {};
 var _selection = {};
@@ -98,9 +99,9 @@ var AppStore = merge(EventEmitter.prototype, {
 // assign 的寫法
 // var TodoStore = assign({}, EventEmitter.prototype, {
 
-  // getAll: function() {
-
-  // },
+  getBooks: function() {
+    return _books;
+  },
 
   getSelection: function() {
     return _selection;
@@ -121,6 +122,32 @@ var AppStore = merge(EventEmitter.prototype, {
 
   
 
+
+});
+
+//========================================================================
+//
+// Load initial data
+
+var ref = new Firebase('https://booksharing.firebaseio.com/books');
+ref.on('value', function(snap) {
+  var objects = snap.val();
+  var items = [];
+  var sorted = [];
+
+  for(var key in objects){
+    items.push(objects[key]);
+  }
+
+  sorted = items.sort(function(a,b){
+    return b.timestamp - a.timestamp;
+  })
+
+  _books = sorted;
+  console.log("Load data from firebase:");
+  console.log(_books);
+  //emit change here
+  AppStore.emitChange();
 
 });
 

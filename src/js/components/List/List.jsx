@@ -10,6 +10,13 @@ var List = React.createClass({
   	
   	switch(this.props.type){
   		case 'basic':
+      
+      var selection = [];
+      console.log("selection:")
+      console.log(this.props.selection);
+      if(this.props.selection)
+        selection = Object.keys(this.props.selection);
+
       var booksArray = [];
       for(var key in this.props.data){
         booksArray.push(this.props.data[key]);
@@ -22,10 +29,17 @@ var List = React.createClass({
 
         .map((item, index) => {
             var boundClick = this.props.handleClick.bind(null, item);
-  			return (
+            var boundSelect = this.props.handleSelect.bind(null, item);
+            var selected = selection.indexOf(item.id)!==-1;
+            //console.log(selection);
+  			    console.log(selected);
+
+        return (
            		<Book key={index} 
            		      data={item}
-           		      handleClick={boundClick} />
+           		      handleClick={boundClick}
+                    handleSelect={boundSelect}
+                    selected={selected} />
   			)
   		});
 

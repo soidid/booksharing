@@ -1,14 +1,5 @@
-.Book-deleteButton {
-    font-size: 14px;
-    position: absolute;
-    left: 10px;
-    top: 10px;
 
-}
-.Book-deleteButton:hover {
-    color: #B71C1C;
-    text-decoration: underline;
-}
+
 
 /* 600px and below*/
 
@@ -23,12 +14,19 @@
     	margin-bottom: 1px;
     	text-align: center;
         cursor: pointer;
+        padding-right: 10px;
     }
     .Book:hover {
        box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
     }
+    .Book-check {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
     .Book-img {
-    	width: 60px;
+    	width: 100px;
     	float: left;
     }
     .Book-title {
@@ -47,13 +45,12 @@
     	overflow: hidden;
     }
     .Book-wishList {
-    	background: rgb(184,155,137);
+    	background: linear-gradient(180deg, rgb(226,205,148),rgb(193,163,103));
     	position: absolute;
     	bottom: 0px;
-    	width: 60px;
-    	color: white;
+    	width: 100px;
+    	font-family: 'Vollkorn', serif;
     	text-align: center;
-    	padding: 5px;
     	font-size: 12px;
     }
 }
@@ -75,8 +72,14 @@
     .Book:hover {
        box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
     }
+    .Book-check {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+   
+    }
     .Book-img {
-    	width:100%;
+    	height: 200px;
     }
     .Book-title {
         padding: 10px;
@@ -94,12 +97,14 @@
     	overflow: hidden;
     }
     .Book-wishList {
-    	background: rgb(184,155,137);
+    	background: linear-gradient(180deg, rgb(226,205,148),rgb(193,163,103));
     	position: absolute;
-    	top: 40%;
+        font-size: 14px;
+    	top: 180px;
+        padding-top: 2px;
     	width: 100%;
-    	color: rgb(247,247,247);
+    	font-family: 'Vollkorn', serif;
     	text-align: center;
-    	padding: 10px;
+    	
     }
 }

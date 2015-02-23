@@ -25,6 +25,7 @@ var CHANGE_EVENT = 'change';
 // 現在只有新增 & 刪除
 
 var _books = {};
+var _selection = {};
 
 function _create(item) {
   // Hand waving here -- not showing how this interacts with XHR or persistent
@@ -53,6 +54,41 @@ function _destroy(id) {
   ref.remove();
 }
 
+function _addToSelection(item) {
+  _selection[item.id] = item;
+  
+}
+
+function _removeFromSelection(id) {
+  delete _selection[id];
+  
+}
+
+function _markSelectioinBrought(){
+  for(var id in _selection){
+    var ref = new Firebase('https://booksharing.firebaseio.com/books/'+id);
+    ref.update({status:"in-shelf"});
+    delete _selection[id];
+    
+  }
+
+}
+
+function _markSelectioinWish(){
+  for(var id in _selection){
+    var ref = new Firebase('https://booksharing.firebaseio.com/books/'+id);
+    ref.update({status:"wish-list"});
+    delete _selection[id];
+    
+  }
+
+}
+
+function _resetSelection(){
+  _selection = {};
+
+}
+
 
 //========================================================================
 //
@@ -62,8 +98,12 @@ var AppStore = merge(EventEmitter.prototype, {
 // assign 的寫法
 // var TodoStore = assign({}, EventEmitter.prototype, {
 
-  getAll: function() {
-    return _books;
+  // getAll: function() {
+
+  // },
+
+  getSelection: function() {
+    return _selection;
   },
   
   //為什麼這個要定義成 public ?
@@ -78,6 +118,10 @@ var AppStore = merge(EventEmitter.prototype, {
   removeChangeListener: function(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   }
+
+  
+
+
 });
 
 //========================================================================
@@ -106,6 +150,31 @@ AppDispatcher.register(function(action) {
     case AppConstants.BOOK_DESTROY:
       _destroy(action.id)
       //處理好之後廣播處去，讓 view 可以更新
+      AppStore.emitChange();
+      break;
+
+    case AppConstants.BOOK_ADD_TO_SELECTION:
+      _addToSelection(action.item);
+      AppStore.emitChange();
+      break;
+
+    case AppConstants.BOOK_REMOVE_FROM_SELECTION:
+      _removeFromSelection(action.id);
+      AppStore.emitChange();
+      break;
+
+    case AppConstants.BOOK_MARK_SELECTION_BROUGHT:
+      _markSelectioinBrought();
+      AppStore.emitChange();
+      break;
+
+    case AppConstants.BOOK_MARK_SELECTION_WISH:
+      _markSelectioinWish();
+      AppStore.emitChange();
+      break;
+
+    case AppConstants.BOOK_RESET_SELECTION:
+      _resetSelection();
       AppStore.emitChange();
       break;
 

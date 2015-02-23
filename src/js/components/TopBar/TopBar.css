@@ -1,0 +1,34 @@
+
+.TopBar {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(193,163,103);
+    margin: 0 auto;
+    position: relative;
+    background: white;
+    text-align: center;
+
+}
+.TopBar-back {
+	position: absolute;
+	left: 10px;
+	top: 5px;
+	cursor: pointer;
+}
+.TopBar-action {
+	display: inline-block;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	margin: 1px;
+	padding: 5px 10px;
+	background: white;
+	cursor: pointer;
+}
+.TopBar-action:hover {
+	background: #3F51B5;
+	color: rgb(247,247,247);
+}
+@media screen and (min-width: 960px){
+    .TopBar {
+    	width: 820px;
+    }
+}

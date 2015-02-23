@@ -13,6 +13,9 @@ var Book = React.createClass({
     AppActions.destroy(this.props.data.id);
   },
 
+  _imageNotFound (event){
+      event.target.src = "images/default.jpg";
+  },
   
   render () {
   	var {
@@ -30,6 +33,7 @@ var Book = React.createClass({
     
     var personItem = (status === "wish-list") ? <Person name={wishedBy} /> : <Person name={owner} />;
     
+
     return (
       <div className="Book"
            onClick={this.props.handleClick}>
@@ -41,7 +45,9 @@ var Book = React.createClass({
 
         {wishItem}
         
-        <img className="Book-img" src={img} />
+        <img className="Book-img" 
+             src={img} 
+             onError={this._imageNotFound }/>
         <div className="Book-title">{title}</div>
         <div className="Book-author">{author}</div>
 

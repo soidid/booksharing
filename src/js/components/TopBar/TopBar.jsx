@@ -85,7 +85,7 @@ var TopBar = React.createClass({
     <select className="TopBar-select"
             ref="status">
         <option value="in-shelf">已購買</option>
-        <option value="wish-list">預購清單</option>  
+        <option value="wish-list">欲購清單</option>  
     </select>
     : "已買";
 

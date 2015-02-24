@@ -24,48 +24,33 @@ var TopBar = React.createClass({
 
   _onUpdate() {
 
-    var status=null;
+    var status = "in-shelf";
     if(this.refs.status)
-      status = this.refs.status.getDOMNode().value || "in-shelf";
+      status = this.refs.status.getDOMNode().value;
     
     var person = this.refs.person.getDOMNode().value;
     var current = this.refs.current.getDOMNode().value;
     
     //NEEDS REWRITE
-    if(person){
-
-      if(status==="in-shelf"){
-         AppActions.update(
-         {
-           status: status,
-           owner: person,
-           current: current
-         });
-  
-      }else{
+    if(status === "in-shelf"){
+        
         AppActions.update(
-         {
+        {
+          status: status,
+          owner: person,
+          current: current
+        });
+  
+    }else{
+        AppActions.update(
+        {
            status: status,
            wishedBy: person
-         });
-      }
-
-    }else{
-
-      AppActions.update(
-        {
-           status: status
         });
-     
     }
 
-    if(current){
-      AppActions.update(
-      {
-        current: current
-      });
 
-    }
+   
 
     //After update, reset the action panel.
     this._onCancel();
@@ -118,7 +103,6 @@ var TopBar = React.createClass({
 
       <select className="TopBar-select"
               ref="person">
-          <option value=""></option>
           <option value="nitwit">nitwit</option>
           <option value="peipei">peipei</option>
           <option value="pm5">pm5</option>
@@ -127,7 +111,6 @@ var TopBar = React.createClass({
       {statusItem}，現旅居：
       <select className="TopBar-select"
               ref="current">
-          <option value=""></option>
           <option value="nitwit">nitwit</option>
           <option value="peipei">peipei</option>
           <option value="pm5">pm5</option>
